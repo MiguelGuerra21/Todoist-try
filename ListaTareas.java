@@ -100,4 +100,21 @@ public class ListaTareas
              }
         }
     }
+    /**
+     * hacer que si encuentra una coincidencia se salga del bucle
+     */
+    public boolean hayTareasCoincidentes (String textoABuscar){
+        boolean chisme = false;
+        int index = 0;
+        while(index < listaDeTareas.size()){
+            if(listaDeTareas.get(index).contains(textoABuscar)){
+                chisme = true;
+                index = listaDeTareas.size();
+            }
+            else{
+                index++;
+            }
+        }
+        return chisme;
+    }
 }
