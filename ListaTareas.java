@@ -110,12 +110,9 @@ public class ListaTareas
         while(index < listaDeTareas.size() && !chisme){
             if(listaDeTareas.get(index).contains(textoABuscar)){
                 chisme = true;
-                
+                valorADevolver = index + 1;
             }
             index++;
-        }
-        if(chisme == true){
-            valorADevolver = index;
         }
         return valorADevolver;
     }
