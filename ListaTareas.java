@@ -101,20 +101,22 @@ public class ListaTareas
         }
     }
     /**
-     * hacer que si encuentra una coincidencia se salga del bucle
+     * Devuelve la posicion que contiene el texto indicado como parametro. -1 en caso contrario.
      */
-    public boolean hayTareasCoincidentes (String textoABuscar){
+    public int hayTareasCoincidentes (String textoABuscar){
         boolean chisme = false;
         int index = 0;
-        while(index < listaDeTareas.size()){
+        int valorADevolver = -1;
+        while(index < listaDeTareas.size() && !chisme){
             if(listaDeTareas.get(index).contains(textoABuscar)){
                 chisme = true;
-                index = listaDeTareas.size();
+                
             }
-            else{
-                index++;
-            }
+            index++;
         }
-        return chisme;
+        if(chisme == true){
+            valorADevolver = index;
+        }
+        return valorADevolver;
     }
 }
